@@ -27,16 +27,17 @@
                                 
                                 <h2>{{ article.title }}</h2>
                                 <p>Total Votes: {{ article.total_votes }}</p>
-                                <a href="{% url 'upvote_article' article.id %}">Upvote</a>
-                                <a href="{% url 'downvote_article' article.id %}">Downvote</a>
+                                <a href="{% url 'upvote_article' article.id %}"><i class="far fa-thumbs-up"></i></a>
+                                &nbsp;
+                                <a href="{% url 'downvote_article' article.id %}"><i class="far fa-thumbs-down"></i></a>
                                 </div>
     
                             <a href="{% url 'article_detail' article.slug %}" class="article-link">
-                                <h2 class="card-title">{{ article.title }}</h2>
-                                <p class="card-text">{{ article.excerpt }}</p>
+                                <h2 class="card-text text-muted h6">Read More</h2>
+                                <!-- <p class="card-text">{{ article.excerpt }}</p> -->
                             </a>
                             <hr />
-                            <p class="card-text text-muted h6">{{ article.created_at}} <i class="far fa-heart"></i>
+                            <p class="text-muted h6">{{ article.created_at}} <i class="far fa-heart"></i>></i>
                                 {{ article.number_of_likes }}</p>
                         </div>
                     </div>

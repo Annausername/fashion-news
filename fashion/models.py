@@ -52,7 +52,7 @@ class Article(models.Model):
         return self.title
 
 class Comment(models.Model):
-    post = models.ForeignKey(Article, on_delete=models.CASCADE, related_name="comments")
+    article = models.ForeignKey(Article, on_delete=models.CASCADE, related_name="comments")
     name = models.CharField(max_length=80)
     email = models.EmailField()
     body = models.TextField()

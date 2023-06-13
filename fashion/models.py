@@ -25,6 +25,8 @@ class Article(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='likes', blank=True)
+    upvotes = models.IntegerField(default=0)
+    downvotes = models.IntegerField(default=0)
 
     class Meta:
         ordering = ['-created_at']
@@ -35,6 +37,19 @@ class Article(models.Model):
     def number_of_likes(self):
         return self.likes.count()
 
+    def total_votes(self):
+        return self.upvotes - self.downvotes
+
+    def upvote(self):
+        self.upvotes += 1
+        self.save()
+
+    def downvote(self):
+        self.downvotes += 1
+        self.save()
+
+    def __str__(self):
+        return self.title
 
 class Comment(models.Model):
     post = models.ForeignKey(Article, on_delete=models.CASCADE, related_name="comments")
@@ -49,5 +64,4 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"{self.name} fashionsays {self.body}"
-
 

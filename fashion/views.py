@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Article
@@ -7,7 +7,7 @@ from .forms import CommentForm
 
 class ArticleList(generic.ListView):
     model = Article
-    queryset = Article.objects.filter(status=1).order_by("-created_at")
+    queryset = Article.objects.filter(status=1).order_by("-upvotes")
     template_name = "index.html"
     paginate_by = 6
 
@@ -71,4 +71,17 @@ class ArticleLike(View):
         else:
             article.likes.add(request.user)
 
-        return HttpResponseRedirect(reverse('article_detail', args=[slug]))        
+        return HttpResponseRedirect(reverse('article_detail', args=[slug]))    
+
+class UpvoteArticleView(View):
+    def get(self, request, article_id):
+        article = get_object_or_404(Article, id=article_id)
+        article.upvote()
+        return redirect('home')
+
+class DownvoteArticleView(View):
+    def get(self, request, article_id):
+        article = get_object_or_404(Article, id=article_id)
+        article.downvote()
+        return redirect('home')
+

@@ -23,6 +23,14 @@
                                     <p class="author">Author: {{ article.author }}</p>
                                 </div>
                             </div>
+                                <div class="post">
+                                
+                                <h2>{{ article.title }}</h2>
+                                <p>Total Votes: {{ article.total_votes }}</p>
+                                <a href="{% url 'upvote_article' article.id %}">Upvote</a>
+                                <a href="{% url 'downvote_article' article.id %}">Downvote</a>
+                                </div>
+    
                             <a href="{% url 'article_detail' article.slug %}" class="article-link">
                                 <h2 class="card-title">{{ article.title }}</h2>
                                 <p class="card-text">{{ article.excerpt }}</p>

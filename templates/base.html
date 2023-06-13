@@ -28,33 +28,47 @@
             <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">f<span class="red-o">a</span>shion<span
             class="thin">|sta</span></span></span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
-            </li>
-            {% if user.is_authenticated %}
-            <li class="nav-item">
-            <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-            </li>
-            {% else %}
-            <li class="nav-item">
-            <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-            </li>
-            {% endif %}
-            </ul>
-            <span class="navbar-text text-muted">
-            stay fashionable
-            </span>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                    </li>
+                    {% endif %}
+                </ul>
+                <span class="navbar-text text-muted">
+                stay fashionable
+                </span>
         </div>
         </div>
     </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                    {{ message | safe }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
 
     <main class="flex-shrink-0 main-bg">
     {% block content %}
@@ -66,10 +80,18 @@
     <footer class="footer mt-auto py-3 dark-bg">
         <p class="m-0 text-center text-white">Go forth & be fabulous!</p>
         <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
-        <i class="fab fa-twitter-square ms-3"></i>
-        <i class="fab fa-instagram-square ms-3"></i>
-        <i class="fab fa-youtube-square ms-3"></i></p>
+            <i class="fab fa-twitter-square ms-3"></i>
+            <i class="fab fa-instagram-square ms-3"></i>
+            <i class="fab fa-youtube-square ms-3"></i></p>
     </footer>
+    <script>
+        setTimeout(function () {
+            let messages = document.getElementById("msg");
+            let alert = new bootstrap.Alert(messages);
+            alert.close();
+        }, 3000);
+
+    </script>
 </body>
 
 

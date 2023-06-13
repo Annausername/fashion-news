@@ -15,17 +15,17 @@ class ArticleDetail(View):
     def get(self, request, slug, *args, **kwags):
         queryset = Article. objects.filter(status=1)
         article = get_object_or_404(queryset, slug=slug)
-        comments = arrticle.filter(approved=True).order_by('-created_at')
+        comments = article.comments.filter(approved=True).order_by('-created_at')
         liked = False
-        if article.likes.filter(id=self.request.userr.id).exists():
+        if article.likes.filter(id=self.request.user.id).exists():
             liked = True
 
         return render(
             request,
-            "article_detail.html"
+            "article_detail.html",
             {
-                "article": article
-                "comments": comments
+                "article": article,
+                "comments": comments,
                 "liked": liked
             },
         )

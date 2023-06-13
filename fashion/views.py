@@ -1,9 +1,8 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Article
+from .models import Article, Comment
 from .forms import CommentForm
-
 
 class ArticleList(generic.ListView):
     model = Article
@@ -84,4 +83,15 @@ class DownvoteArticleView(View):
         article = get_object_or_404(Article, id=article_id)
         article.downvote()
         return redirect('home')
+
+from django.shortcuts import get_object_or_404, redirect
+from django.views import View
+from .models import Comment
+
+class CommentDeleteView(View):
+    def get(self, request, comment_id):
+        comment = get_object_or_404(Comment, id=comment_id)
+        comment.delete()
+        return redirect('article_detail', slug=comment.article.slug)
+
 

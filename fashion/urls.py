@@ -7,6 +7,7 @@ from .views import (
     ArticleLike,
     UpvoteArticleView,
     DownvoteArticleView,
+    CommentDeleteView,
 )
 
 urlpatterns = [
@@ -15,4 +16,5 @@ urlpatterns = [
     path('like/<slug:slug>', views.ArticleLike.as_view(), name='article_like'),
     path('posts/<int:article_id>/upvote/', UpvoteArticleView.as_view(), name='upvote_article'),
     path('posts/<int:article_id>/downvote/', DownvoteArticleView.as_view(), name='downvote_article'),
+    path('comment/delete/<int:comment_id>/', CommentDeleteView.as_view(), name='comment_delete'),
 ]

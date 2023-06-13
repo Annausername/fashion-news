@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
@@ -59,9 +60,15 @@ class Comment(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
 
+    def delete_url(self):
+        return reverse("comment_delete", args=[self.pk])
+
     class Meta:
         ordering = ["created_at"]
 
     def __str__(self):
         return f"{self.name} fashionsays {self.body}"
+
+    def delete_url(self):
+        return reverse("comment_delete", args=[self.id])
 

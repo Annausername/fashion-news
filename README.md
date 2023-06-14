@@ -77,6 +77,8 @@ The user requested to enter a username, email and password.
 To Sign out user will be asked to confirm an action. ![view](https://github.com/Annausername/fashion-news/blob/main/media/logout.png)
 [Back to top](#contents)
 
+The UI/UX (User Interface/User Experience) is an essential aspect of any project, including Fashionista, and it still requires major input.
+
 ## **Technologies**
 ### **Languages and Frameworks**
   - [Python](https://www.python.org/)
@@ -94,6 +96,91 @@ To Sign out user will be asked to confirm an action. ![view](https://github.com/
 [Back to top](#contents)
 
 ## **Testing**
+
+## Manual Testing
+
+### Nav Bar
+  - Ability to select 'Home' nav link - PASS
+  - If user not logged in, display 'Log In' nav link - PASS
+  - Abilty to select 'Log In' nav link - PASS
+  - If user logged in, display Logout instead - PASS
+  - Ability to 'SignUp' nav link - PASS
+  - Ability to select 'Log Out' nav link - PASS
+
+### Home Page
+  - Ability to select and choose an acticle from the list - PASS
+  - Ability to change page using the pagination buttons - PASS
+  - Ability to Upvote/Downvote posts - PASS
+  - Ability to view an article - PASS
+
+### PC Detail Page
+  - If user is logged in, show ability to leave comment, othervise don't show - PASS
+  - If user is logged in, show ability to like article, othervise don't show - PASS
+  - If admin is logged in, show delete comment button, othervise don't show - PASS
+
+### Log In Page
+  - SignIn works properly - PASS
+
+### Register Page
+  - SignUp works properly - PASS
+
+### Article 
+  - If non logged in user gets to this page, display error message with login redirect button - PASS
+  - If valid data is entered, allow form to be posted - PASS
+  - If invalid data is entered, don't allow form to be posted - PASS
+  - Only upload images that are JPEG or PNG - PASS
+  - All fields are mandatory - PASS
+
+### Like
+  - If user is logged, comment function works - PASS
+
+### Comment
+  - If user is logged, comment function works, send a request to admin for approvel and redirects to home page. UUser sees an alert that the comment needs moderation  - PASS
+
+### Delete 
+  - If admin is logged, delete comment function works and redirects to home page - PASS
+
+
+## Validation 
+
+### HTML Validation
+### Home Page 
+  - No errors apart from some styling elements. This appears to be related to font awesome and nothing related to my created code.
+
+### CSS Validation
+
+Running my style.css file through the validator returned no errors.
+
+### Python Validation
+To note I have not put all python files.
+
+## Models
+
+# Article Model
+
+Test creating an article: Ensures that an article can be created with the required fields (title, content, author).
+
+# Comment Model
+
+Test creating a comment: Ensures that a comment can be created with the required fields (article, name, email, content).
+![model](https://github.com/Annausername/fashion-news/blob/main/media/test%20models.png)
+## Views
+
+# ArticleDetail View
+
+Test retrieving article detail: Ensures that the article detail page can be accessed successfully. It checks for the correct HTTP response status code (200), the correct template used (article_detail.html), and the presence of the article's title and the content of the first comment.
+
+# CommentDeleteView
+
+Test deleting a comment: Ensures that a comment can be deleted successfully. It checks for the correct HTTP response status code (302) after deleting a comment and verifies that the comment no longer exists in the database.
+The tests help verify the functionality and behavior of the models and views in the Fashionista application. They ensure that the data is being stored correctly and that the views are rendering the expected output. Running the test suite provides confidence in the reliability of the application and helps identify any issues or regressions.
+![views](https://github.com/Annausername/fashion-news/blob/main/media/test%20views.png)
+## Device Testing
+
+Using Google Developer Tools, I mimicked mobile phones in the browser to test for scaling and to ensure all data was displayed clearly. During my testing everything behaved as intended and all images were very clear, all containers scaled down to fit corectly. All functionality was still working with no issues.
+
+The Fashionista project includes a suite of tests to ensure the stability and functionality of the application. However, the testing coverage is an area that requires more attention and enhancement from a developert perspective. 
+
 [Back to top](#contents)
 
 ## **Deployment**

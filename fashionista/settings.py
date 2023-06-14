@@ -34,7 +34,6 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = ['8000-annausernam-fashionnews-mnfnfd7kei2.ws-eu99.gitpod.io', 'fashionista.herokuapp.com', 'localhost']
 
-
 # Application definition
 
 INSTALLED_APPS = [

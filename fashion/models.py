@@ -3,16 +3,6 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
-# CATEGORIES = (
-#     ("makeup,"),
-#     ("nature"),
-#     ("handmade"),
-#     ("design"),
-#     ("fitness"),
-#     ("jewelery"),
-#     ("celebrities"),
-# )
-
 STATUS = ((0, "Draft"), (1, "Published"))
 
 class Article(models.Model):

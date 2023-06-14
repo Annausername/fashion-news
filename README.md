@@ -63,4 +63,4 @@ As a user, I should be able to:
 
 ### **Agile Methodology**
 
-This project was developed using Agile methodology, following the principles and practices outlined in Agile to manage and develop the project. [Project board](media/project.png) as an indication of what I had on paper. 
+This project was developed using Agile methodology, following the principles and practices outlined in Agile to manage and develop the project. [Project board]([media/project.png](https://github.com/Annausername/fashion-news/blob/main/media/project.png)) as an indication of what I had on paper. 

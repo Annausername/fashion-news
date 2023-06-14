@@ -1,39 +1,66 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Fashionista News #
 
-Welcome,
+Fashionista News is a Reddit-like news site where users can interact with articles on various fashion-related topics. Users can browse through a list of news, view article details, like articles, upvote or downvote articles, and post comments. This project aims to provide a platform for fashion enthusiasts to stay updated with the latest news and trends in the fashion industry.
 
-This is the Code Institute student template for Codeanywhere. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+[Live Site](https://fashionista.herokuapp.com/)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **May 11th, 2023**
+## Contents
+- [User Experiences](#user-experience)
+  - [User Stories](#user-stories)
+  - [Agile Methodology](#agile-methodology)
+  - [Wireframes](#wireframes)
+  - [Database](#database)
+  - [Color Scheme](#color-scheme)
+- [Features](#features)
+  - [Existing Features](#existing-features)
+  - [Future Features](#future-features)
+- [Technologies](#technologies)
+  - [Languages & Frameworks](#languages-and-frameworks)
+  - [Other](#other)
+- [Testing](#testing)
+- [Deployment](#deployment)
+  - [Database](#database)
+  - [Heroku](#heroku)
+  - [Cloudinary](#cloudinary)
+  - [Forking](#forking)
+  - [Cloning](#cloning)
+- [Credits](#credits)## Contents
+- [User Experiences](#user-experience)
+  - [User Stories](#user-stories)
+  - [Agile Methodology](#agile-methodology)
+  - [Wireframes](#wireframes)
+  - [Database](#database)
+  - [Color Scheme](#color-scheme)
+- [Features](#features)
+  - [Existing Features](#existing-features)
+  - [Future Features](#future-features)
+- [Technologies](#technologies)
+  - [Languages & Frameworks](#languages-and-frameworks)
+  - [Other](#other)
+- [Testing](#testing)
+- [Deployment](#deployment)
+  - [Database](#database)
+  - [Heroku](#heroku)
+  - [Cloudinary](#cloudinary)
+  - [Forking](#forking)
+  - [Cloning](#cloning)
+- [Credits](#credits)
 
-## Codeanywhere Reminders
+## **User Experiences**
+### **User Stories**
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+As a user, I should be able to:
+  - View news list
+  - View an article
+  - Registrer an account
+  - View comments
+  - Comment on an article
+  - View likes
+  - Like / Unlike
+  - See time/date of posting
+  - Upvote/downvote a particular article
+[Back to top](#contents)
 
-`python3 -m http.server`
+### **Agile Methodology**
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
-
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
-
-`http_server`
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A button should appear to click: _Open Preview_ or _Open Browser_.
-
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
----
-
-Happy coding!
+This project was developed using Agile methodology, following the principles and practices outlined in Agile to manage and develop the project. [Project board](https://github.com/users/camerong-dev/projects/4) as an indication of what I had on paper. 
